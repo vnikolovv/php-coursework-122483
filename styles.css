@@ -1,0 +1,45 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffd700;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ffffff;
+}
+
+.navbar-brand {
+    color: #ffd700;
+}
+
+.btn-outline-light {
+    color: #ffd700;
+    border-color: #ffd700;
+}
+
+.btn-outline-light:hover {
+    color: #121212;
+    background-color: #ffd700;
+    border-color: #ffd700;
+}
+
+.bg-dark {
+    background-color: #1c1c1c !important;
+}
+
+.text-light {
+    color: #e0e0e0 !important;
+}
+
+.text-golden {
+    color: #ffd700 !important;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 400px; 
+    object-fit: cover;
+}
