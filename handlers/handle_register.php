@@ -21,7 +21,7 @@ if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/', $password)
 if ($password != $repeat_password)
     return_func('danger', 'Passwords do not match!', 'register');
 
-$query = "SELECT id FROM users WHERE EMAIL = :email OR USERNAME = :username";
+$query = "SELECT ID FROM USERS WHERE EMAIL = :email OR USERNAME = :username";
 $stmt = $pdo->prepare($query);
 $login_parmas = [
     'email' => $email,
@@ -36,7 +36,7 @@ if ($user)
 
 $hash = password_hash($password, PASSWORD_ARGON2I);
 
-$query = "INSERT INTO users (USERNAME, EMAIL, `PASSWORD`, `ROLE`) VALUES (:username, :email, :hash, 'user')";
+$query = "INSERT INTO USERS (USERNAME, EMAIL, `PASSWORD`, `ROLE`) VALUES (:username, :email, :hash, 'user')";
 $stmt = $pdo->prepare($query);
 $params = [
     'username' => $username,

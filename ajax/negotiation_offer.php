@@ -17,7 +17,7 @@ if ($product_id <= 0 || $price <= 0) {
     exit;
 }
 
-$query = "SELECT * FROM products WHERE ID = :product_id";
+$query = "SELECT * PRODUCTS WHERE ID = :product_id";
 $stmt = $pdo->prepare($query);
 $stmt->execute(['product_id' => $product_id]);
 

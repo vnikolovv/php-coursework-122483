@@ -20,9 +20,9 @@ if ($product_id <= 0) {
 $user_id = $_SESSION['user_id'];
 
 if ($mode === 'add') {
-    $query = "INSERT INTO saved_products (USER_ID, PRODUCT_ID) VALUES (:user_id, :product_id)";
+    $query = "INSERT INTO SAVED_PRODUCTS (USER_ID, PRODUCT_ID) VALUES (:user_id, :product_id)";
 } else {
-    $query = "DELETE FROM saved_products WHERE USER_ID = :user_id AND PRODUCT_ID = :product_id";
+    $query = "DELETE FROM SAVED_PRODUCTS WHERE USER_ID = :user_id AND PRODUCT_ID = :product_id";
 }
 
 $stmt = $pdo->prepare($query);

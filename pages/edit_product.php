@@ -1,6 +1,6 @@
 <?php
     $id = intval($_GET['id'] ?? 0);
-    $query = "SELECT * FROM products WHERE ID = :id";
+    $query = "SELECT * PRODUCTS WHERE ID = :id";
     $stmt = $pdo->prepare($query);
     $stmt->execute(['id' => $id]);
     $product = $stmt->fetch();

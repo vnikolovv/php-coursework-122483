@@ -12,7 +12,7 @@ check_for_empty_field('login');
 $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
-$query = "SELECT * FROM users WHERE USERNAME = :username";
+$query = "SELECT * FROM USERS WHERE USERNAME = :username";
 $stmt = $pdo->prepare($query);
 $stmt->execute(['username' => $username]);
 $user = $stmt->fetch();
@@ -26,7 +26,7 @@ if (!password_verify($password, $user['PASSWORD']))
 session_start();
 $_SESSION['username'] = $user['USERNAME'];
 $_SESSION['user_id'] = $user['ID'];
-$_SESSION['is_owner'] = $user['ROLE'] == 'owner';
+$_SESSION['is_owner'] = $user['ROLE'] == 'admin';
 setcookie('username', $user['USERNAME'], time() + 3600, '/', 'localhost', false, true);
 
 header('Location: ../index.php');

@@ -45,13 +45,13 @@ if (mb_strlen($description) < 10 || mb_strlen($description) > 1024)
 $query = "";
 if ($img_uploaded) {
     $query = "
-        UPDATE products
+        UPDATE PRODUCTS
         SET NAME = :name, PRICE = :price, DESCRIPTION = :description, IMAGE = :image
         WHERE ID = :id
     ";
 } else {
     $query = "
-        UPDATE products
+        UPDATE PRODUCTS
         SET NAME = :name, PRICE = :price, DESCRIPTION = :description
         WHERE ID = :id
     ";

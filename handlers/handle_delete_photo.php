@@ -12,7 +12,7 @@ $product_id = intval($_POST['product_id'] ?? 0);
 if ($id <= 0 || $product_id <= 0)
     return_func('danger', 'Invalid product!', 'products');
 
-$query = "DELETE FROM product_images WHERE ID = :id";
+$query = "DELETE FROM PRODUCT_IMAGES WHERE ID = :id";
 $stmt = $pdo->prepare($query);
 if ($stmt->execute([':id' => $id])) 
     return_func('success', 'Image deleted successfully!', 'edit_product&id=' . $product_id);

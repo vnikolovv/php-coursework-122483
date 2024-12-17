@@ -34,7 +34,7 @@ if (isset($_FILES['additional_images'])) {
 }
 
 if (!empty($uploaded_files)) {
-    $query = "INSERT INTO product_images (product_id, image) VALUES ";
+    $query = "INSERT INTO PRODUCT_IMAGES (PRODUCT_ID, IMAGE) VALUES ";
     $params = [];
     foreach ($uploaded_files as $file) {
         $query .= "(?, ?),";

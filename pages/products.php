@@ -1,12 +1,12 @@
 <?php
 $products = [];
 
-$query = "SELECT * FROM products WHERE `NAME` LIKE :search";
+$query = "SELECT * FROM PRODUCTS WHERE `NAME` LIKE :search";
 $stmt = $pdo->prepare($query);
 $stmt->execute([':search' => "%$search%"]);
 
 while ($row = $stmt->fetch()) {
-    $fav_query = "SELECT id FROM saved_products WHERE USER_ID = :user_id AND PRODUCT_ID = :product_id";
+    $fav_query = "SELECT ID FROM SAVED_PRODUCTS WHERE USER_ID = :user_id AND PRODUCT_ID = :product_id";
     $fav_stmt = $pdo->prepare($fav_query);
     $fav_params = [
         ':user_id' => $_SESSION['user_id'] ?? 0,
