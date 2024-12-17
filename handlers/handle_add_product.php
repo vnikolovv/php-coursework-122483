@@ -27,13 +27,13 @@ $new_file_name = time() . '_' . $_FILES['image']['name'];
 $upload_dir = '../uploads/';
 
 if (!is_dir($upload_dir)) {
-    mkdir($upload_dir, 0755, true);
+    mkdir($upload_dir, 0777, true);
 }
 
 if (!move_uploaded_file($_FILES['image']['tmp_name'], $upload_dir . $new_file_name))
     return_func('danger', 'Error uploading image!', 'add_product');
 
-$query = "INSERT INTO PRODUCTS (`NAME`, PRICE, `DESCRIPTION`, `MAIN_IMAGE`) VALUES (:name, :price, :description ,:image)";
+$query = "INSERT INTO PRODUCTS (`NAME`, PRICE, `DESCRIPTION`, `MAIN_IMAGE`) VALUES (:name, :price, :description, :image)";
 $stmt = $pdo->prepare($query);
 $params = [
     'name' => $name,

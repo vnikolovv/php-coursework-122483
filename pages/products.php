@@ -56,13 +56,13 @@ while ($row = $stmt->fetch()) {
                         if ($product['is_favorite'] == '1') {
                             $fav_btn = '
                                 <div class="card-footer text-center">
-                                    <button type="button" class="btn btn-sm btn-gray toggle-saved" data-product="' . $product['ID'] . '">Remove from saved</button>
+                                    <button type="button" class="btn btn-sm btn-danger toggle-saved" data-product="' . $product['ID'] . '">Remove from saved</button>
                                 </div>
                             ';
                         } else {
                             $fav_btn = '
                                 <div class="card-footer text-center">
-                                    <button type="button" class="btn btn-sm btn-gold toggle-saved" data-product="' . $product['ID'] . '">Add to saved</button>
+                                    <button type="button" class="btn btn-sm btn-light toggle-saved" data-product="' . $product['ID'] . '">Add to saved</button>
                                 </div>
                             ';
                         }

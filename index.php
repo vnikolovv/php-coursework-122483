@@ -51,7 +51,7 @@ if (in_array($page, $owner_pages) && !is_owner())
             $(document).on('click', '.toggle-saved', function() {
                 let btn = $(this);
                 let productId = btn.data('product');
-                let action = btn.hasClass('btn-primary') ? 'add' : 'remove';
+                let action = btn.hasClass('btn-light') ? 'add' : 'remove';
                 let url = './ajax/alter_saved_product.php';
 
                 $.ajax({
@@ -78,7 +78,7 @@ if (in_array($page, $owner_pages) && !is_owner())
                             },
                             showCloseButton: true,
                         });
-                            let newBtn = $('<button type="button" class="btn btn-sm btn-' + (action == 'add' ? 'danger' : 'primary') + ' toggle-saved" data-product="' + productId + '">' + (action == 'add' ? 'Remove from saved' : 'Add to saved') + '</button>');
+                            let newBtn = $('<button type="button" class="btn btn-sm btn-' + (action == 'add' ? 'danger' : 'light') + ' toggle-saved" data-product="' + productId + '">' + (action == 'add' ? 'Remove from saved' : 'Add to saved') + '</button>');
                             btn.replaceWith(newBtn);
                         } else {
                             Swal.fire({
